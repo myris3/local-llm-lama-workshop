@@ -7,7 +7,6 @@ type ChatMessage = {
 };
 const aiWorker = new Worker();
 
-//
 //const MODEL_NAME = 'Xenova/distilgpt2';
 //const MODEL_NAME = 'onnx-community/Gpt2-Wikitext-9180-ONNX'
 const MODEL_NAME = 'Xenova/LaMini-Flan-T5-783M';
@@ -60,7 +59,6 @@ export default function App() {
       if (aiResponse.status === 'ready') {
         setModelStatus('ready');
       } else if (aiResponse.result) {
-        //console.log('AI Response:', aiResponse.result);
         appendMessage(aiResponse.result, 'assistant');
         setChatStatus('ready');
       }
